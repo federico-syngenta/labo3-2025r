@@ -2,6 +2,7 @@
 *.csv
 *.csv.gz
 datasets/sell-in.txt
+*.parquet
 
 # Windows image file caches
 Thumbs.db
