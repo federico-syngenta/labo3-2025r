@@ -1,0 +1,87 @@
+Beginning AutoGluon training... Time limit = 3600s
+AutoGluon will save models to 'c:\Users\s1093678\OneDrive - Syngenta\Documents\Crop Protection\Cursos\Master en Data Science\21 - Labo III\repo\labo3-2025r\Nootebook\AutogluonModels\ag-20250704_141936'
+=================== System Info ===================
+AutoGluon Version:  1.3.1
+Python Version:     3.11.9
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.22621
+CPU Count:          12
+GPU Count:          0
+Memory Avail:       1.08 GB / 15.69 GB (6.9%)
+Disk Space Avail:   26.50 GB / 235.51 GB (11.3%)
+===================================================
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': WQL,
+ 'freq': 'MS',
+ 'hyperparameters': 'default',
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 2,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'tn',
+ 'time_limit': 3600,
+ 'verbosity': 2}
+
+train_data with frequency 'IRREG' has been resampled to frequency 'MS'.
+Provided train_data has 22375 rows (NaN fraction=0.1%), 780 time series. Median time series length is 36 (min=4, max=36). 
+	Removing 75 short time series from train_data. Only series with length >= 9 will be used for training.
+	After filtering, train_data has 21916 rows (NaN fraction=0.1%), 705 time series. Median time series length is 36 (min=9, max=36). 
+
+Provided data contains following columns:
+	target: 'tn'
+	past_covariates:
+		categorical:        []
+		continuous (float): ['product_id']
+
+To learn how to fix incorrectly inferred types, please see documentation for TimeSeriesPredictor.fit
+
+AutoGluon will gauge predictive performance using evaluation metric: 'WQL'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2025-07-04 11:19:42
+Models that will be trained: ['SeasonalNaive', 'RecursiveTabular', 'DirectTabular', 'NPTS', 'DynamicOptimizedTheta', 'AutoETS', 'ChronosZeroShot[bolt_base]', 'ChronosFineTuned[bolt_small]', 'TemporalFusionTransformer', 'DeepAR', 'PatchTST', 'TiDE']
+Training timeseries model SeasonalNaive. Training for up to 276.4s of the 3593.2s of remaining time.
+	-0.2298       = Validation score (-WQL)
+	5.97    s     = Training runtime
+	0.38    s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 298.9s of the 3586.9s of remaining time.
+	Time series in the dataset are too short for chosen differences [12]. Setting differences to [1].
+	Time series in the dataset are too short for chosen differences [12]. Setting differences to [1].
+	-0.2838       = Validation score (-WQL)
+	1.70    s     = Training runtime
+	0.06    s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 325.9s of the 3585.1s of remaining time.
+	-0.2441       = Validation score (-WQL)
+	2.04    s     = Training runtime
+	0.10    s     = Validation (prediction) runtime
+Training timeseries model NPTS. Training for up to 358.3s of the 3582.9s of remaining time.
+	-0.2800       = Validation score (-WQL)
+	0.45    s     = Training runtime
+	0.40    s     = Validation (prediction) runtime
+Training timeseries model DynamicOptimizedTheta. Training for up to 398.0s of the 3582.0s of remaining time.
+	Warning: DynamicOptimizedTheta\W0 failed for 705 time series (100.0%). Fallback model SeasonalNaive was used for these time series.
+	Warning: DynamicOptimizedTheta\W1 failed for 705 time series (100.0%). Fallback model SeasonalNaive was used for these time series.
+	-0.2300       = Validation score (-WQL)
+	1.79    s     = Training runtime
+	0.90    s     = Validation (prediction) runtime
+Training timeseries model AutoETS. Training for up to 447.4s of the 3579.3s of remaining time.
+	Warning: AutoETS\W0 failed for 705 time series (100.0%). Fallback model SeasonalNaive was used for these time series.
+	Warning: AutoETS\W1 failed for 705 time series (100.0%). Fallback model SeasonalNaive was used for these time series.
+	-0.2300       = Validation score (-WQL)
+	0.99    s     = Training runtime
+	1.09    s     = Validation (prediction) runtime
+Training timeseries model ChronosZeroShot[bolt_base]. Training for up to 511.0s of the 3577.2s of remaining time.
+	-0.1905       = Validation score (-WQL)
+	59.15   s     = Training runtime
+	4.91    s     = Validation (prediction) runtime
+Training timeseries model ChronosFineTuned[bolt_small]. Training for up to 585.5s of the 3513.2s of remaining time.
+	Skipping covariate_regressor since the dataset contains no covariates or static features.
+	Fine-tuning on the CPU detected. We recommend using a GPU for faster fine-tuning of Chronos.
